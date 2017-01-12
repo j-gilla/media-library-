@@ -1,6 +1,6 @@
-const FLICK_API_KEY = "a46a979f39c49975dbdd23b378e6d3d5";
+const FLICKR_API_KEY = "a46a979f39c49975dbdd23b378e6d3d5";
 const SHUTTER_CLIENT_ID = "3434a56d8702085b9226";
-const SUTTER_CLIENT_SECRET = "7698001661a2b347c2017dfd50aebb2519eda578";
+const SHUTTER_CLIENT_SECRET = "7698001661a2b347c2017dfd50aebb2519eda578";
 
 const basicAuth = () => 'Basic '.concat(window.btoa(`${SHUTTER_CLIENT_ID}:${SHUTTER_CLIENT_SECRET}`));
 const authParameters = {
@@ -18,7 +18,7 @@ return fetch(SHUTTERSTOCK_API_ENDPOINT, authParameters)
     return response.json();
   })
   .then(json => {
-    return json.data.map({ id, assets, description }) => ({
+    return json.data.map(({ id, assets, description }) => ({
       id,
       mediaUrl: assets.preview_mp4.url,
       description

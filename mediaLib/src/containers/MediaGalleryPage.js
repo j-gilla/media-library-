@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { flickrImages, shutterStockVideos } from '../Api/api';
 
 class MediaGalleryPage extends Component {
