@@ -2,15 +2,31 @@ import React, { Component } from 'react';
 import { flickrImages, shutterStockVideos } from '../Api/api';
 
 class MediaGalleryPage extends Component {
+
   componentDidMount() {
-    flickrImages('rain').then(images => console.log(images, 'Images'));
-    shutterStockVideos('rain').then(videos => console.log(videos, 'Videos'));
+    this.props.dispatch(searchMediaAction('rain'));
   }
 
   render() {
     //Todo: Render videos & images here
-    return (<div></div>)
+    console.log(this.props.images, 'Images');
+    console.log(this.props.videos, 'videos')
+    console.log(this.props.selectedImage, 'SelectedImage')
+    console.log(this.props.selectedVideo, 'SelectedVideo');
+    return (<div> </div>)
   }
 }
+
+MediaGalleryPage.proppTypes = {
+
+};
+
+
+const mapStateToProps = ({ iamges, videos}) => ({
+  images: images[0],
+  selectedImage: images.selectedImage,
+  videos: videos[0],
+  selectedVideo: videos.selectedVideo
+});
 
 export default MediaGalleryPage;
