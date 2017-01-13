@@ -29,4 +29,5 @@ const mapStateToProps = ({ iamges, videos}) => ({
   selectedVideo: videos.selectedVideo
 });
 
-export default MediaGalleryPage;
+export default connect (
+  mapStateToProps)(MediaGalleryPage);
