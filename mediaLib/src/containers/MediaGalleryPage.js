@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { flickrImages, shutterStockVideos } from '../Api/api';
+import { connect } from 'react-redux';
+import { searchMediaAction } from '../actions/mediaActions';
 
 class MediaGalleryPage extends Component {
 
@@ -22,7 +23,7 @@ MediaGalleryPage.proppTypes = {
 };
 
 
-const mapStateToProps = ({ iamges, videos}) => ({
+const mapStateToProps = ({ images, videos}) => ({
   images: images[0],
   selectedImage: images.selectedImage,
   videos: videos[0],

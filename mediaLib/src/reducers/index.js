@@ -1,8 +1,8 @@
-import { comboineReducers } from 'redux';
+import { combineReducers } from 'redux';
 import images from './imageReducer';
 import videos from './videoReducer';
 
-const rootReducer = comboineReducers({
+const rootReducer = combineReducers({
   images,
   videos,
 });
